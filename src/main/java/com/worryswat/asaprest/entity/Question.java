@@ -37,7 +37,12 @@ public class Question extends Time{
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "question_id")
-    List<Answer> answers;
+    private List<Answer> answers;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "question_id")
+    private List<VoteItem> voteItems;
+
 
 
 }
