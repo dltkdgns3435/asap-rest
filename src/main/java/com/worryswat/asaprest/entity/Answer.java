@@ -23,9 +23,6 @@ public class Answer extends Time{
     @Column
     private int up;
 
-    @Column
-    private int down;
-
     @Column(length = 20)
     private String nickname;
 
