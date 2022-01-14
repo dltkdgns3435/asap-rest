@@ -33,4 +33,4 @@ spring:
   config:
     activate:
       on-profile: prod
-    import: file:/spring-config/rest/application.yml
+    import: file:/home/ubuntu/spring-config/rest/application.yml
