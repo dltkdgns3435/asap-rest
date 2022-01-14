@@ -21,9 +21,9 @@ public class VoteItem extends Time{
     @JoinColumn(name = "question_id")
     private Question question;
 
-    @Column(length = 10)
+    @Column(length = 10, nullable = false)
     private String title;
 
     @Column
-    private int count;
+    private int count = 0;
 }

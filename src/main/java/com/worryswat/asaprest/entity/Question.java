@@ -17,14 +17,14 @@ public class Question extends Time{
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 500)
+    @Column(length = 500, nullable = false)
     private String content;
 
     @Column
-    private int hits;
+    private int hits = 0;
 
     @Column
-    private int up;
+    private int up = 0;
 
     @Column(length = 20)
     private String nickname;

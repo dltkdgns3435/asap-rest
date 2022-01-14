@@ -17,16 +17,16 @@ public class Answer extends Time{
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 500)
+    @Column(length = 500, nullable = false)
     private String content;
 
     @Column
-    private int up;
+    private int up = 0;
 
-    @Column(length = 20)
+    @Column(length = 20, nullable = false)
     private String nickname;
 
-    @Column(length = 15)
+    @Column(length = 15, nullable = false)
     private String ip;
 
     @ManyToOne
