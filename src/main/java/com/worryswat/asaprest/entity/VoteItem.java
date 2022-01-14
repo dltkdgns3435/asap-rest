@@ -12,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "vote_item")
-public class VoteItem extends Time{
+public class VoteItem extends Time {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,4 +26,8 @@ public class VoteItem extends Time{
 
     @Column
     private int count = 0;
+
+    public void voted() {
+        this.count = this.count + 1;
+    }
 }

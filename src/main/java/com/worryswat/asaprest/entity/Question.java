@@ -13,8 +13,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "question")
-public class Question extends Time{
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Question extends Time {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(length = 500, nullable = false)
@@ -24,7 +25,7 @@ public class Question extends Time{
     private int hits = 0;
 
     @Column
-    private int up = 0;
+    private int recommend = 0;
 
     @Column(length = 20)
     private String nickname;
@@ -40,6 +41,13 @@ public class Question extends Time{
     @JoinColumn(name = "question_id")
     private List<VoteItem> voteItems;
 
+    public void hit() {
+        this.hits = this.hits + 1;
+    }
+
+    public void recommended() {
+        this.recommend = this.recommend + 1;
+    }
 
 
 }

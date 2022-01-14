@@ -13,15 +13,16 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "answer")
-public class Answer extends Time{
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Answer extends Time {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(length = 500, nullable = false)
     private String content;
 
     @Column
-    private int up = 0;
+    private int recommend = 0;
 
     @Column(length = 20, nullable = false)
     private String nickname;
@@ -32,5 +33,9 @@ public class Answer extends Time{
     @ManyToOne
     @JoinColumn(name = "question_id")
     private Question question;
+
+    public void recommended() {
+        this.recommend = this.recommend + 1;
+    }
 
 }
