@@ -9,7 +9,6 @@ import javax.persistence.*;
 import java.util.List;
 
 @Getter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "answer")
@@ -38,4 +37,12 @@ public class Answer extends Time {
         this.recommend = this.recommend + 1;
     }
 
+    @Builder
+    public Answer(String content, int recommend, String nickname, String ip, Question question) {
+        this.content = content;
+        this.recommend = recommend;
+        this.nickname = nickname;
+        this.ip = ip;
+        this.question = question;
+    }
 }

@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Getter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "vote_item")
@@ -25,9 +24,15 @@ public class VoteItem extends Time {
     private String title;
 
     @Column
-    private int count = 0;
+    private int voteCount = 0;
 
     public void voted() {
-        this.count = this.count + 1;
+        this.voteCount = this.voteCount + 1;
+    }
+
+    @Builder
+    public VoteItem(Question question, String title) {
+        this.question = question;
+        this.title = title;
     }
 }
