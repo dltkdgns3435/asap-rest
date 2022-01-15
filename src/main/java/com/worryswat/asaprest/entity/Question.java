@@ -6,15 +6,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@SequenceGenerator(
+        name = "question_idx_seq",
+        sequenceName = "question_idx"
+)
 @Entity(name = "question")
 public class Question extends Time {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "question_idx_seq")
     private Long id;
 
     @Column(length = 500, nullable = false)
@@ -31,6 +36,9 @@ public class Question extends Time {
 
     @Column(length = 15)
     private String ip;
+
+    @Column
+    private LocalDateTime limitTime;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "question_id")
@@ -49,10 +57,11 @@ public class Question extends Time {
     }
 
     @Builder
-    public Question(String content, String nickname, String ip, List<Answer> answers, List<VoteItem> voteItems) {
+    public Question(String content, String nickname, String ip, LocalDateTime limitTime, List<Answer> answers, List<VoteItem> voteItems) {
         this.content = content;
         this.nickname = nickname;
         this.ip = ip;
+        this.limitTime = limitTime;
         this.answers = answers;
         this.voteItems = voteItems;
     }
