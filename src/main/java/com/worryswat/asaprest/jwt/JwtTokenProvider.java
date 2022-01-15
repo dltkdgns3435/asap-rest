@@ -33,9 +33,9 @@ public class JwtTokenProvider {
         key = Base64.getEncoder().encodeToString(key.getBytes());
     }
 
-    public String generateToken(String email, Collection<? extends GrantedAuthority> authorities) {
+    public String generateToken(String email) {
         Claims claims = Jwts.claims().setSubject(email);
-        claims.put("ROLE", authorities);
+        claims.put("ROLE", "ROLE_PLAYER");
         Date now = new Date();
         return Jwts.builder()
                 .setClaims(claims)

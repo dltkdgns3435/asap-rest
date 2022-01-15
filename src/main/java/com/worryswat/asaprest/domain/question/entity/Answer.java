@@ -1,7 +1,7 @@
 package com.worryswat.asaprest.domain.question.entity;
 
 import com.worryswat.asaprest.domain.common.entity.Time;
-import com.worryswat.asaprest.domain.user.entity.User;
+import com.worryswat.asaprest.domain.player.entity.Player;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -29,8 +29,8 @@ public class Answer extends Time {
     private int recommend = 0;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "player_id")
+    private Player player;
 
     @Column(length = 15, nullable = false)
     private String ip;
@@ -44,10 +44,10 @@ public class Answer extends Time {
     }
 
     @Builder
-    public Answer(String content, int recommend, User user, String ip, Question question) {
+    public Answer(String content, int recommend, Player player, String ip, Question question) {
         this.content = content;
         this.recommend = recommend;
-        this.user = user;
+        this.player = player;
         this.ip = ip;
         this.question = question;
     }

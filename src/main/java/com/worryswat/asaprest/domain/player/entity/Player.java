@@ -1,4 +1,4 @@
-package com.worryswat.asaprest.domain.user.entity;
+package com.worryswat.asaprest.domain.player.entity;
 
 
 import com.worryswat.asaprest.domain.question.entity.Answer;
@@ -15,13 +15,13 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @SequenceGenerator(
-        name = "user_idx_seq",
-        sequenceName = "user_idx"
+        name = "player_idx_seq",
+        sequenceName = "player_idx"
 )
-@Entity(name = "user")
-public class User {
+@Entity(name = "player")
+public class Player {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_idx_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "player_idx_seq")
     private Long id;
 
     @Column(length = 20, nullable = false, unique = true)
@@ -31,15 +31,15 @@ public class User {
     private String password;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "player_id")
     private List<Question> questions;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "player_id")
     private List<Answer> answers;
 
     @Builder
-    public User(String nickname, String password, List<Question> questions, List<Answer> answers) {
+    public Player(String nickname, String password, List<Question> questions, List<Answer> answers) {
         this.nickname = nickname;
         this.password = password;
         this.questions = questions;

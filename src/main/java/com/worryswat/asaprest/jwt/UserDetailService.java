@@ -1,6 +1,7 @@
 package com.worryswat.asaprest.jwt;
 
-import com.worryswat.asaprest.domain.user.repository.UserRepository;
+import com.worryswat.asaprest.domain.player.entity.Player;
+import com.worryswat.asaprest.domain.player.repository.PlayerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -16,16 +17,16 @@ import java.util.Collections;
 @RequiredArgsConstructor
 public class UserDetailService implements UserDetailsService {
 
-    private final UserRepository userRepository;
+    private final PlayerRepository playerRepository;
 
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String stringId) throws UsernameNotFoundException {
         Long id = Long.parseLong(stringId);
-        com.worryswat.asaprest.domain.user.entity.User user = userRepository.findById(id)
+        Player player = playerRepository.findById(id)
                 .orElseThrow(() -> new UsernameNotFoundException("사용자를 찾을 수 없습니다."));
 
-        return new User(user.getNickname(), user.getPassword(), Collections.singleton(new SimpleGrantedAuthority("ROLE_USER")));
+        return new User(player.getNickname(), player.getPassword(), Collections.singleton(new SimpleGrantedAuthority("ROLE_PLAYER")));
     }
 
 }
