@@ -27,8 +27,9 @@ public class Answer extends Time {
     @Column
     private int recommend = 0;
 
-    @Column(length = 20, nullable = false)
-    private String nickname;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @Column(length = 15, nullable = false)
     private String ip;
@@ -42,10 +43,10 @@ public class Answer extends Time {
     }
 
     @Builder
-    public Answer(String content, int recommend, String nickname, String ip, Question question) {
+    public Answer(String content, int recommend, User user, String ip, Question question) {
         this.content = content;
         this.recommend = recommend;
-        this.nickname = nickname;
+        this.user = user;
         this.ip = ip;
         this.question = question;
     }

@@ -31,11 +31,9 @@ public class Question extends Time {
     @Column
     private int recommend = 0;
 
-    @Column(length = 20)
-    private String nickname;
-
-    @Column(length = 15)
-    private String ip;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @Column
     private LocalDateTime limitTime;
@@ -57,11 +55,10 @@ public class Question extends Time {
     }
 
     @Builder
-    public Question(String content, String nickname, String ip, LocalDateTime limitTime, List<Answer> answers, List<VoteItem> voteItems) {
+    public Question(String content, User user, LocalDateTime limitTime, List<Answer> answers, List<VoteItem> voteItems) {
         this.content = content;
-        this.nickname = nickname;
-        this.ip = ip;
         this.limitTime = limitTime;
+        this.user = user;
         this.answers = answers;
         this.voteItems = voteItems;
     }

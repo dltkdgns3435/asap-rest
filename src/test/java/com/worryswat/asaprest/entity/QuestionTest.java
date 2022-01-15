@@ -13,8 +13,6 @@ class QuestionTest {
         //given
         Question question = Question.builder()
                 .content("질문입니다")
-                .nickname("닉네임")
-                .ip("255.255.255.255")
                 .build();
 
         //when
@@ -30,8 +28,6 @@ class QuestionTest {
         //given
         Question question = Question.builder()
                 .content("질문입니다")
-                .nickname("닉네임")
-                .ip("255.255.255.255")
                 .build();
 
         //when
