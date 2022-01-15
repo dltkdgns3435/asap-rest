@@ -1,5 +1,7 @@
-package com.worryswat.asaprest.entity;
+package com.worryswat.asaprest.domain.question.entity;
 
+import com.worryswat.asaprest.domain.common.entity.Time;
+import com.worryswat.asaprest.domain.question.entity.Question;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

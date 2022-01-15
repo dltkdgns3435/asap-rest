@@ -1,5 +1,6 @@
 package com.worryswat.asaprest.entity;
 
+import com.worryswat.asaprest.domain.question.entity.Question;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

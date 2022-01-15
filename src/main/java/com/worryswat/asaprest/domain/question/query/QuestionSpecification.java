@@ -1,6 +1,6 @@
-package com.worryswat.asaprest.query;
+package com.worryswat.asaprest.domain.question.query;
 
-import com.worryswat.asaprest.entity.Question;
+import com.worryswat.asaprest.domain.question.entity.Question;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 

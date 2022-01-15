@@ -28,6 +28,9 @@ spring:
       hibernate:
         #        show_sql: true
         format_sql: true
+  jwt:
+    secret: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ
+
 
 logging.level:
   org.hibernate.SQL: debug

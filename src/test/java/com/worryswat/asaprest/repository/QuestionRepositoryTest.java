@@ -1,7 +1,8 @@
 package com.worryswat.asaprest.repository;
 
-import com.worryswat.asaprest.entity.Question;
-import com.worryswat.asaprest.query.QuestionSpecification;
+import com.worryswat.asaprest.domain.question.entity.Question;
+import com.worryswat.asaprest.domain.question.query.QuestionSpecification;
+import com.worryswat.asaprest.domain.question.repository.QuestionRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

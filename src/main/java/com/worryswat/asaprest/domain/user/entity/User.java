@@ -1,6 +1,8 @@
-package com.worryswat.asaprest.entity;
+package com.worryswat.asaprest.domain.user.entity;
 
 
+import com.worryswat.asaprest.domain.question.entity.Answer;
+import com.worryswat.asaprest.domain.question.entity.Question;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,11 +24,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_idx_seq")
     private Long id;
 
-    @Column(length = 20, nullable = false)
+    @Column(length = 20, nullable = false, unique = true)
     private String nickname;
 
-    @Column(length = 15, nullable = false)
-    private String ip;
+    @Column(nullable = false, length = 256)
+    private String password;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
@@ -37,9 +39,9 @@ public class User {
     private List<Answer> answers;
 
     @Builder
-    public User(String nickname, String ip, List<Question> questions, List<Answer> answers) {
+    public User(String nickname, String password, List<Question> questions, List<Answer> answers) {
         this.nickname = nickname;
-        this.ip = ip;
+        this.password = password;
         this.questions = questions;
         this.answers = answers;
     }
