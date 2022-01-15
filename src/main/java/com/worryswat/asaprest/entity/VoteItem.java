@@ -10,10 +10,14 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@SequenceGenerator(
+        name = "vote_item_idx_seq",
+        sequenceName = "vote_item_idx"
+)
 @Entity(name = "vote_item")
 public class VoteItem extends Time {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vote_item_idx_seq")
     private Long id;
 
     @ManyToOne

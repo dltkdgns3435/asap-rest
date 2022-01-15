@@ -11,10 +11,14 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@SequenceGenerator(
+        name = "answer_idx_seq",
+        sequenceName = "answer_idx"
+)
 @Entity(name = "answer")
 public class Answer extends Time {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "answer_idx_seq")
     private Long id;
 
     @Column(length = 500, nullable = false)
