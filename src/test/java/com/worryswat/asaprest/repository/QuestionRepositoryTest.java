@@ -48,6 +48,7 @@ class QuestionRepositoryTest {
         questions.add(new Question("질문3", null, null, null, null));
         questions.add(new Question("질문4", null, null, null, null));
         questions.add(new Question("질문5", null, null, null, null));
+        //'검색' 키워드 사용
         questions.add(new Question("검색 질문6", null, null, null, null));
         questions.add(new Question("질 검색 문7", null, null, null, null));
         questions.add(new Question("질문 검색 8", null, null, null, null));
