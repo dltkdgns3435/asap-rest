@@ -1,4 +1,4 @@
-package com.worryswat.asaprest.config.security;
+package com.worryswat.asaprest.common.config.security;
 
 import com.worryswat.asaprest.jwt.JwtFilter;
 import com.worryswat.asaprest.jwt.JwtTokenProvider;

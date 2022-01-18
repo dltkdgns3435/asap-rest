@@ -1,6 +1,6 @@
 package com.worryswat.asaprest.domain.question.entity;
 
-import com.worryswat.asaprest.domain.common.entity.Time;
+import com.worryswat.asaprest.domain.common.entity.Base;
 import com.worryswat.asaprest.domain.player.entity.Player;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +17,7 @@ import javax.persistence.*;
         sequenceName = "answer_idx"
 )
 @Entity(name = "answer")
-public class Answer extends Time {
+public class Answer extends Base {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "answer_idx_seq")
     private Long id;
