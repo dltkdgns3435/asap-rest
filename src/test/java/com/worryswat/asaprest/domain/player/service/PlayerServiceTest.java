@@ -1,6 +1,5 @@
 package com.worryswat.asaprest.domain.player.service;
 
-import com.worryswat.asaprest.domain.player.dto.LoginPlayerDto;
 import com.worryswat.asaprest.domain.player.dto.PlayerIdPasswordDto;
 import com.worryswat.asaprest.domain.player.entity.Player;
 import com.worryswat.asaprest.domain.player.repository.PlayerRepository;
@@ -10,7 +9,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest

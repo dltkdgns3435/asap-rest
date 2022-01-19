@@ -1,14 +1,11 @@
 package com.worryswat.asaprest.domain.player.service;
 
-import com.worryswat.asaprest.domain.player.dto.LoginPlayerDto;
 import com.worryswat.asaprest.domain.player.dto.PlayerIdPasswordDto;
 import com.worryswat.asaprest.domain.player.entity.Player;
 import com.worryswat.asaprest.domain.player.repository.PlayerRepository;
 import com.worryswat.asaprest.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
