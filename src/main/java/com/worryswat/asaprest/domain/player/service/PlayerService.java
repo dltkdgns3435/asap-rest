@@ -16,7 +16,7 @@ public class PlayerService {
     private final PlayerRepository playerRepository;
     private final JwtTokenProvider tokenProvider;
 
-    //사용자 로그인
+    //사용자 로그인/회원가입 통합
     public String login(PlayerIdPasswordDto postPlayerDto){
         //ID로 플레이어를 조회하고, 존재하면 로그인 진행, 존재하지 않으면 회원가입 후 로그인을 진행한다.
         Player player = playerRepository.findByNickname(postPlayerDto.getNickname())
