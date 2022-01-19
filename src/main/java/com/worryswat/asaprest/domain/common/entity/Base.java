@@ -6,6 +6,8 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
@@ -32,7 +34,12 @@ public class Base {
     @LastModifiedBy
     private String updateBy;
 
+    private String deleteBy;
+
     public void delete(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        this.deleteBy = authentication == null ? "anonymousUser" : authentication.getName();
+
         this.deletedAt = LocalDateTime.now();
     }
 }
