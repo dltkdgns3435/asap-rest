@@ -1,6 +1,6 @@
 package com.worryswat.asaprest.domain.player.controller;
 
-import com.worryswat.asaprest.domain.player.dto.PostPlayerDto;
+import com.worryswat.asaprest.domain.player.dto.PlayerIdPasswordDto;
 import com.worryswat.asaprest.domain.player.service.PlayerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class PlayerController {
     private final PlayerService playerService;
 
-    @PostMapping
-    public ResponseEntity<Long> createUser(PostPlayerDto postPlayerDto){
-        Long result = playerService.createUser(postPlayerDto);
+    @PostMapping("/login")
+    public ResponseEntity<String> loginPlayer(PlayerIdPasswordDto playerIdPasswordDto){
+        String result = playerService.login(playerIdPasswordDto);
         return new ResponseEntity<>(result, HttpStatus.CREATED);
     }
 }

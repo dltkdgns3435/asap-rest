@@ -8,7 +8,7 @@ import javax.validation.constraints.NotEmpty;
 
 @Getter
 @AllArgsConstructor
-public class PostPlayerDto {
+public class PlayerIdPasswordDto {
     @NotEmpty(message = "닉네임을 입력해주세요")
     private String nickname;
     @NotEmpty(message = "패스워드를 입력해주세요")
