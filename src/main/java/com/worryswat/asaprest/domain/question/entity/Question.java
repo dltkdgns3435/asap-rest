@@ -56,11 +56,14 @@ public class Question extends Base {
         this.recommend = this.recommend + 1;
     }
 
+    public void registerWriter(Player player){
+        player.postQuestion(this);
+        this.player = player;
+    }
     @Builder
-    public Question(String content, Player player, LocalDateTime limitTime, List<Answer> answers, List<VoteItem> voteItems) {
+    public Question(String content, LocalDateTime limitTime, List<Answer> answers, List<VoteItem> voteItems) {
         this.content = content;
         this.limitTime = limitTime;
-        this.player = player;
         this.answers = answers;
         this.voteItems = voteItems;
     }

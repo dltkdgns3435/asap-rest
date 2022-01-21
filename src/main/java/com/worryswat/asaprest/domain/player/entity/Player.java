@@ -38,6 +38,10 @@ public class Player {
     @JoinColumn(name = "player_id")
     private List<Answer> answers;
 
+    public void postQuestion(Question question){
+        this.questions.add(question);
+    }
+
     @Builder
     public Player(String nickname, String password, List<Question> questions, List<Answer> answers) {
         this.nickname = nickname;

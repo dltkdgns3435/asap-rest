@@ -10,7 +10,10 @@ public class QuestionService {
     private final QuestionRepository questionRepository;
 
     //질문 생성
-
+    //옵션 질문, 질문+투표, 투표, 제한시간 여부
+    public Long createQuestion(){
+        return 0L;
+    }
 
     //큰 카테고리
     //질문 조회(dto 페이징) -> 에디터1: 답변 있는것 조회
@@ -19,7 +22,6 @@ public class QuestionService {
 
     //특정 정보
     //질문 조회(숫자) -> 모든 질문 갯수
-    //질문 조회(숫자) -> 현재 답변이 필요한 질문 갯수
 
     //세부 검색
     //질문 조회(dto 페이징) -> 콘텐츠 내용으로 검색
