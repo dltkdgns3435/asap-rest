@@ -11,9 +11,6 @@ public class QuestionService {
 
     //질문 생성
     //옵션 질문, 질문+투표, 투표, 제한시간 여부
-    public Long createQuestion(){
-        return 0L;
-    }
 
     //큰 카테고리
     //질문 조회(dto 페이징) -> 에디터1: 답변 있는것 조회
